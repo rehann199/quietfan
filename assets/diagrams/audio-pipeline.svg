@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" role="img" aria-labelledby="t d">
+  <title id="t">Audio pipeline</title>
+  <desc id="d">A sound is chosen from the catalog and looked up in the local cache. A cache hit plays the saved file; a miss streams from remote storage while saving a copy, and a background prefetch fills the same cache. The player engine uses single-item loop mode, feeds a volume and fade stage, then the device output. A media session service, an audio session handler and a sleep timer control the player.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f2f0ff; }
+      .h { font-size: 28px; font-weight: 700; }
+      .s { font-size: 15px; fill: #b8b6d9; }
+      .t { font-size: 16px; font-weight: 700; }
+      .b { font-size: 13px; fill: #cfcdee; }
+      .l { font-size: 12px; font-weight: 700; fill: #a974ff; }
+      .k { font-size: 12px; fill: #b8b6d9; }
+      .box { fill: #1a1f4a; stroke: #6c5ce7; stroke-width: 1.8; }
+      .core { fill: #2a2470; stroke: #a974ff; stroke-width: 2.2; }
+      .cache { fill: #12304a; stroke: #35c9a4; stroke-width: 1.8; }
+      .ctl { fill: #1d1a3d; stroke: #8f86d9; stroke-width: 1.6; stroke-dasharray: 6 4; }
+      .line { stroke: #a974ff; stroke-width: 2; fill: none; }
+      .teal { stroke: #35c9a4; stroke-width: 2; fill: none; }
+      .dash { stroke: #8f86d9; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; }
+    </style>
+    <marker id="ap" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a974ff"/>
+    </marker>
+    <marker id="at" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#35c9a4"/>
+    </marker>
+    <marker id="ad" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8f86d9"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="650" rx="18" fill="#0f1230"/>
+  <text x="40" y="52" class="h">From a tap to the speaker</text>
+  <text x="40" y="78" class="s">Audio is fetched once, cached on the device, and played through one player wrapped by session, service and timer logic.</text>
+
+  <rect x="50" y="120" width="196" height="120" rx="12" class="box"/>
+  <text x="68" y="150" class="t">Sound catalog</text>
+  <text x="68" y="174" class="b">31 sounds, 5 fan types,</text>
+  <text x="68" y="194" class="b">each flagged free or</text>
+  <text x="68" y="214" class="b">premium</text>
+
+  <rect x="276" y="120" width="196" height="120" rx="12" class="cache"/>
+  <text x="294" y="150" class="t">Cache lookup</text>
+  <text x="294" y="174" class="b">Is a non-empty local</text>
+  <text x="294" y="194" class="b">file already saved for</text>
+  <text x="294" y="214" class="b">this sound?</text>
+
+  <rect x="502" y="120" width="196" height="120" rx="12" class="core"/>
+  <text x="520" y="150" class="t">Player engine</text>
+  <text x="520" y="174" class="b">Single-item loop mode;</text>
+  <text x="520" y="194" class="b">loads are queued and</text>
+  <text x="520" y="214" class="b">stale requests dropped</text>
+
+  <rect x="728" y="120" width="196" height="120" rx="12" class="box"/>
+  <text x="746" y="150" class="t">Volume and fades</text>
+  <text x="746" y="174" class="b">User volume, short</text>
+  <text x="746" y="194" class="b">crossfade on switch,</text>
+  <text x="746" y="214" class="b">timer fade-out</text>
+
+  <rect x="954" y="120" width="196" height="120" rx="12" class="box"/>
+  <text x="972" y="150" class="t">Output</text>
+  <text x="972" y="174" class="b">Speaker or headphones</text>
+  <text x="972" y="194" class="b">through the OS audio</text>
+  <text x="972" y="214" class="b">stack</text>
+
+  <path class="line" d="M246 180 H272" marker-end="url(#ap)"/>
+  <path class="teal" d="M472 168 H498" marker-end="url(#at)"/>
+  <text x="474" y="158" class="l">hit</text>
+  <path class="line" d="M698 180 H724" marker-end="url(#ap)"/>
+  <path class="line" d="M924 180 H950" marker-end="url(#ap)"/>
+
+  <rect x="50" y="290" width="196" height="110" rx="12" class="cache"/>
+  <text x="68" y="320" class="t">Prefetch</text>
+  <text x="68" y="344" class="b">After launch, sounds are</text>
+  <text x="68" y="364" class="b">fetched one at a time</text>
+  <text x="68" y="384" class="b">into the same cache</text>
+
+  <rect x="276" y="290" width="196" height="110" rx="12" class="box"/>
+  <text x="294" y="320" class="t">Remote fetch</text>
+  <text x="294" y="344" class="b">Plays from the network</text>
+  <text x="294" y="364" class="b">while saving a copy:</text>
+  <text x="294" y="384" class="b">retries, size check</text>
+
+  <path class="teal" d="M374 240 V286" marker-end="url(#at)"/>
+  <text x="382" y="268" class="l">miss</text>
+  <path class="teal" d="M246 345 H272" marker-end="url(#at)"/>
+  <path class="line" d="M472 345 H530 V244" marker-end="url(#ap)"/>
+  <text x="482" y="336" class="l">stream</text>
+
+  <rect x="50" y="450" width="350" height="130" rx="12" class="ctl"/>
+  <text x="68" y="480" class="t">Media session service</text>
+  <text x="68" y="506" class="b">Android foreground service of type</text>
+  <text x="68" y="526" class="b">media playback. Notification and lock</text>
+  <text x="68" y="546" class="b">screen controls: play, pause, stop.</text>
+  <text x="68" y="566" class="b">Swiping the app away stops playback.</text>
+
+  <rect x="430" y="450" width="350" height="130" rx="12" class="ctl"/>
+  <text x="448" y="480" class="t">Audio session</text>
+  <text x="448" y="506" class="b">Music profile. Any interruption pauses;</text>
+  <text x="448" y="526" class="b">playback resumes by itself only after a</text>
+  <text x="448" y="546" class="b">transient pause. Unplugging headphones</text>
+  <text x="448" y="566" class="b">pauses.</text>
+
+  <rect x="810" y="450" width="340" height="130" rx="12" class="ctl"/>
+  <text x="828" y="480" class="t">Sleep timer</text>
+  <text x="828" y="506" class="b">In-app countdown that runs only while</text>
+  <text x="828" y="526" class="b">audio plays. Arming it turns loop off.</text>
+  <text x="828" y="546" class="b">Optional fade-out ahead of zero, then</text>
+  <text x="828" y="566" class="b">playback and session stop.</text>
+
+  <path class="dash" d="M380 450 V425 H580 V244" marker-end="url(#ad)"/>
+  <path class="dash" d="M650 450 V244" marker-end="url(#ad)"/>
+  <path class="dash" d="M870 450 V244" marker-end="url(#ad)"/>
+
+  <text x="50" y="618" class="k">Solid arrows: audio data. Dashed arrows: control signals into the player. The timer also drives the fade-out stage.</text>
+</svg>

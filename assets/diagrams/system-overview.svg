@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="t d">
+  <title id="t">System overview</title>
+  <desc id="d">A Flutter app on Android with a presentation layer, view models, services for audio, downloads, notifications, billing and ads, and local storage in preferences and a file cache. Outside the device are remote audio object storage, Google Play Billing, an ad SDK with a consent form, and Firebase services including analytics, crash reporting, messaging and a cloud database holding ad placement switches.</desc>
+  <defs>
+    <style>
+      text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #f2f0ff; }
+      .h { font-size: 28px; font-weight: 700; }
+      .s { font-size: 15px; fill: #b8b6d9; }
+      .k { font-size: 12px; font-weight: 700; letter-spacing: 1.6px; fill: #a974ff; }
+      .t { font-size: 17px; font-weight: 700; }
+      .b { font-size: 14px; fill: #cfcdee; }
+      .dev { fill: #141842; stroke: #6c5ce7; stroke-width: 2.2; }
+      .cloud { fill: #101a3a; stroke: #35c9a4; stroke-width: 2.2; }
+      .layer { fill: #1a1f4a; stroke: #6c5ce7; stroke-width: 1.5; }
+      .core { fill: #2a2470; stroke: #a974ff; stroke-width: 1.8; }
+      .store { fill: #12304a; stroke: #35c9a4; stroke-width: 1.5; }
+      .ext { fill: #14284a; stroke: #35c9a4; stroke-width: 1.5; }
+      .line { stroke: #a974ff; stroke-width: 2; fill: none; }
+      .teal { stroke: #35c9a4; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="ap" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a974ff"/>
+    </marker>
+    <marker id="at" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#35c9a4"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="640" rx="18" fill="#0f1230"/>
+  <text x="40" y="52" class="h">One Flutter codebase, thin service layers</text>
+  <text x="40" y="78" class="s">Screens talk to view models; audio, billing, ads and notifications sit behind services.</text>
+
+  <rect x="40" y="104" width="700" height="500" rx="16" class="dev"/>
+  <text x="62" y="134" class="k">ON THE DEVICE (ANDROID)</text>
+
+  <rect x="64" y="150" width="652" height="76" rx="12" class="layer"/>
+  <text x="84" y="178" class="t">Presentation</text>
+  <text x="84" y="202" class="b">Home, library, favorites, player, settings, paywall, onboarding, app tour</text>
+
+  <rect x="64" y="248" width="652" height="76" rx="12" class="layer"/>
+  <text x="84" y="276" class="t">View models (Provider)</text>
+  <text x="84" y="300" class="b">Player, timer, favorites, library, settings, theme, language, navigation</text>
+
+  <rect x="64" y="346" width="652" height="104" rx="12" class="core"/>
+  <text x="84" y="374" class="t">Services</text>
+  <text x="84" y="398" class="b">Audio player and media session, sound downloader, reminders and push display,</text>
+  <text x="84" y="418" class="b">purchase service, ad manager with consent, analytics and crash reporting,</text>
+  <text x="84" y="438" class="b">in-app update check</text>
+
+  <rect x="64" y="488" width="316" height="100" rx="12" class="store"/>
+  <text x="84" y="516" class="t">Local storage</text>
+  <text x="84" y="540" class="b">Preferences: favorites, timer, loop,</text>
+  <text x="84" y="560" class="b">volume, reminders, entitlements.</text>
+  <text x="84" y="580" class="b">File cache: downloaded audio.</text>
+
+  <rect x="400" y="488" width="316" height="100" rx="12" class="layer"/>
+  <text x="420" y="516" class="t">Platform</text>
+  <text x="420" y="540" class="b">Foreground media service, audio</text>
+  <text x="420" y="560" class="b">focus, scheduled alarms, notification</text>
+  <text x="420" y="580" class="b">channels, billing client</text>
+
+  <path class="line" d="M390 226 V244" marker-end="url(#ap)"/>
+  <path class="line" d="M390 324 V342" marker-end="url(#ap)"/>
+  <path class="line" d="M222 450 V484" marker-end="url(#ap)"/>
+  <path class="line" d="M558 450 V484" marker-end="url(#ap)"/>
+
+  <rect x="800" y="104" width="360" height="500" rx="16" class="cloud"/>
+  <text x="822" y="134" class="k">OUTSIDE THE DEVICE</text>
+
+  <rect x="824" y="150" width="312" height="80" rx="12" class="ext"/>
+  <text x="844" y="178" class="t">Remote audio storage</text>
+  <text x="844" y="202" class="b">Object storage served over HTTPS;</text>
+  <text x="844" y="220" class="b">files are downloaded then cached</text>
+
+  <rect x="824" y="248" width="312" height="80" rx="12" class="ext"/>
+  <text x="844" y="276" class="t">Store billing</text>
+  <text x="844" y="300" class="b">Play Billing: subscription and</text>
+  <text x="844" y="318" class="b">one-time products, restore</text>
+
+  <rect x="824" y="346" width="312" height="80" rx="12" class="ext"/>
+  <text x="844" y="374" class="t">Ads and consent</text>
+  <text x="844" y="398" class="b">Ad SDK with a consent form;</text>
+  <text x="844" y="416" class="b">rewarded, banner, native, others</text>
+
+  <rect x="824" y="444" width="312" height="140" rx="12" class="ext"/>
+  <text x="844" y="472" class="t">Firebase</text>
+  <text x="844" y="496" class="b">Analytics and Crashlytics</text>
+  <text x="844" y="516" class="b">Cloud Messaging (topic push)</text>
+  <text x="844" y="536" class="b">Cloud database: per-placement</text>
+  <text x="844" y="556" class="b">ad switches, read live and</text>
+  <text x="844" y="576" class="b">treated as off until confirmed</text>
+
+  <path class="teal" d="M716 398 H770"/>
+  <path class="teal" d="M770 190 V504"/>
+  <path class="teal" d="M770 190 H820" marker-end="url(#at)"/>
+  <path class="teal" d="M770 288 H820" marker-end="url(#at)"/>
+  <path class="teal" d="M770 386 H820" marker-end="url(#at)"/>
+  <path class="teal" d="M770 504 H820" marker-end="url(#at)"/>
+</svg>
